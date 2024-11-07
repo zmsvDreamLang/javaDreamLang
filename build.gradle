@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.dl.vm2'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'org.dl.vm2.Main'
+        )
+    }
+}
+
+task run(type: JavaExec) {
+    main = 'org.dl.vm2.Main'
+    classpath = sourceSets.main.runtimeClasspath
+    args = []
+}
+
